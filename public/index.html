@@ -1,0 +1,90 @@
+<html>
+<head>
+  <title>NFL Statistic Visualizer</title>
+</head>
+<body>
+  <body background = 'bg.jpg'>
+  <h1 align="center">NFL Visualization</h1>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+<style>
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    width: 960px;
+    color: black;
+  }
+	.fix-form {
+		position: fixed;
+		top: 50;
+		left: 0;
+	}
+
+	.fix-svg--top {
+		position: absolute;
+		top: 50;
+		left: 150;
+	}
+
+  .fix-svg--radial {
+    position: fixed;
+    top: 5;
+    left: 1350;
+  }
+
+  .team_ranks {
+    position: fixed;
+    top: 500px;
+    left:20px;
+    width:200px;
+    height: 800px;
+  }
+
+  .bot_vis {
+    position: absolute;
+    top: 530px;
+    left: 220px;
+  }
+
+</style>
+  <div class="fix-form">
+	<label><b>Select up to three</b></label><br>
+
+	<label><b>Offensive Statistics</b></label><br>
+	<label><input type="checkbox" name="mode" value="Score Offense" onclick="return itemClicked(0)"> Offensive Scoring</label><br>
+	<label><input type="checkbox" name="mode" value="First Down" onclick="return itemClicked(1)"> First Down Attempts</label><br>
+	<label><input type="checkbox" name="mode" value="Third Down Conversion" onclick="return itemClicked(2)"> 3rd Down Conversion</label><br>
+	<label><input type="checkbox" name="mode" value="Yards Per Carry" onclick="return itemClicked(3)"> Rush Yards Attempted</label><br>
+	<label><input type="checkbox" name="mode" value="Rush Yards" onclick="return itemClicked(4)"> Rush Yards Completed</label><br>
+	<label><input type="checkbox" name="mode" value="Pass Completion" onclick="return itemClicked(5)"> Pass Completion</label><br>
+	<label><input type="checkbox" name="mode" value="Pass Yards" onclick="return itemClicked(6)"> Pass Yards</label><br>
+	<label><input type="checkbox" name="mode" value="Turnovers" onclick="return itemClicked(7)"> Turnover</label><br>
+	<label><input type="checkbox" name="mode" value="Sacks Taken" onclick="return itemClicked(8)"> Sacks Taken</label><br>
+
+  <label><b>Defensive Statistics</b></label><br>
+	<label><input type="checkbox" name="mode" value="Defensive Scoring" onclick="return itemClicked(9)"> Defensive Scores</label><br>
+	<label><input type="checkbox" name="mode" value="Rushing Yards Allowed" onclick="return itemClicked(10)"> Rushing Yards Allowed</label><br>
+	<label><input type="checkbox" name="mode" value="Passing Yards Allowed" onclick="return itemClicked(11)"> Passing Yards Allowed</label><br>
+	<label><input type="checkbox" name="mode" value="Interceptions" onclick="return itemClicked(12)"> Interceptions</label><br>
+	<label><input type="checkbox" name="mode" value="Fumbles" onclick="return itemClicked(13)"> Fumbles Recovered</label><br>
+	<label><input type="checkbox" name="mode" value="Sacks" onclick="return itemClicked(14)"> Sacks</label><br>
+	<label><input type="checkbox" name="mode" value="Third Down Stop" onclick="return itemClicked(15)"> 3rd Down Stop Rate</label><br>
+  </div>
+  <svg class="top_vis fix-svg--top">
+  </svg>
+
+  <svg class="radial_win fix-svg--radial">
+  </svg>
+
+  <svg class="bot_vis">
+    <g></g>
+  </svg>
+
+  <svg class="team_ranks">
+  </svg>
+
+  <script src="script.js" language="JavaScript">
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "nflstats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.gatech.edu/ydekel3/nfl_stats.git"
+  },
+  "author": "thedekel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.4",
+    "mongodb": "^1.4.22"
+  }
+}
