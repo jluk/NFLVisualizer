@@ -5,8 +5,13 @@ an info vis project for showing NFL stats to decide which team was most successf
 
 TODOs:
 Aesthetic redesigns
+
 Color scheme changes
+
 Mouseovers for radial chart
+
 Scaling y-axis
+
 Address 32 color grid issue
+
 Format team rankings
