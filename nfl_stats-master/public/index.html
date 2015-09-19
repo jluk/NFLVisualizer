@@ -1,0 +1,137 @@
+<html>
+<head>
+  <title>NFL Statistic Visualizer</title>
+</head>
+<body>
+  <body background = 'bg.jpg'>
+  <h1 align="center" id="page_title">NFL Visualization</h1>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<style>
+  div.ranking_title {
+    position: fixed;
+    left: 10px;
+    top: 350px;
+  }
+
+  div.worst {
+    position: absolute;
+    top: 510;
+    left: 310px;
+  }
+
+  div.best {
+    position: absolute;
+    top: 510;
+    left: 1290px;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    color: black;
+    width: 1600px;
+  }
+	.fix-form {
+		position: fixed;
+		top: 50;
+		left: 0;
+	}
+
+	.fix-svg--top {
+		position: absolute;
+		top: 50;
+		left: 150;
+	}
+
+  .fix-svg--radial {
+    position: absolute;
+    top: 5;
+    left: 1350;
+  }
+
+  .team_ranks {
+    position: fixed;
+    top: 400px;
+    left:20px;
+    width:200px;
+    height: 800px;
+  }
+  .team_ranks g{
+    cursor: pointer;
+  }
+
+  .bot_vis {
+    position: absolute;
+    top: 530px;
+    left: 220px;
+  }
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+  <div class="fix-form">
+	<label><b>Select up to three</b></label><br>
+
+	<label><b>Offensive Statistics</b></label><br>
+	<label><input type="checkbox" name="mode" value="Score Offense" onclick="return itemClicked(0)" checked> Offensive Scoring</label><br>
+	<label><input type="checkbox" name="mode" value="First Down" onclick="return itemClicked(1)" checked> First Down Attempts</label><br>
+	<label><input type="checkbox" name="mode" value="Third Down Conversion" onclick="return itemClicked(2)"> 3rd Down Conversion</label><br>
+	<label><input type="checkbox" name="mode" value="Yards Per Carry" onclick="return itemClicked(3)"> Rush Yards Attempted</label><br>
+	<label><input type="checkbox" name="mode" value="Rush Yards" onclick="return itemClicked(4)"> Rush Yards Completed</label><br>
+	<label><input type="checkbox" name="mode" value="Pass Completion" onclick="return itemClicked(5)"> Passes Attempted</label><br>
+	<label><input type="checkbox" name="mode" value="Pass Yards" onclick="return itemClicked(6)"> Completed Passess</label><br>
+	<label><input type="checkbox" name="mode" value="Turnovers" onclick="return itemClicked(7)"> Total Yards Passed</label><br>
+	<label><input type="checkbox" name="mode" value="Sacks Taken" onclick="return itemClicked(8)"> Passes Intercepted</label><br>
+	<label><input type="checkbox" name="mode" value="Defensive Scoring" onclick="return itemClicked(9)"> Fumbles</label><br>
+	<label><input type="checkbox" name="mode" value="Rushing Yards Allowed" onclick="return itemClicked(10)"> Number of Sacks</label><br>
+	<label><input type="checkbox" name="mode" value="Passing Yards Allowed" onclick="return itemClicked(11)"> Yards Sacked</label><br>
+	<label><input type="checkbox" name="mode" value="Interceptions" onclick="return itemClicked(12)"> Penalty Yards</label><br>
+	<label><input type="checkbox" name="mode" value="Fumbles" onclick="return itemClicked(13)"> Average Punts</label><br>
+  </div>
+  <div class="ranking_title"><h3>Ranking</h3></div>
+  <div class="worst"><h4>worst</h4></div>
+  <div class="best"><h4>best</h4></div>
+
+  <svg class="top_vis fix-svg--top">
+  </svg>
+
+  <svg class="radial_win fix-svg--radial">
+  </svg>
+
+  <svg class="bot_vis">
+    <g></g>
+  </svg>
+
+  <svg class="team_ranks">
+  </svg>
+
+  <script src="script.js" language="JavaScript"></script>
+</body>
+</html>
